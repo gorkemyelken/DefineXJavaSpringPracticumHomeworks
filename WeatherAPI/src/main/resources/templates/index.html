@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Weather API</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <Link Rel="Stylesheet" Href="/style.css">
 </head>
 <body>
 <div class="card">
-    <h1>Weather</h1>
+    <h1>Weather API</h1>
     <div th:each="weather: ${data.getWeather()}">
         <div th:text="'Main: ' + ${weather.getMain()}">Main</div>
         <div th:text="'Description: ' + ${weather.getDescription()}">Description</div>

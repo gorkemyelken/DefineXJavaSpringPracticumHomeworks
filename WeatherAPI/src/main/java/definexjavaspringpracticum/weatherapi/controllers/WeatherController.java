@@ -8,8 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
@@ -19,11 +17,6 @@ public class WeatherController {
     @Autowired
     public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
-    }
-
-    @GetMapping("/weather")
-    public ResponseEntity<CurrentWeather> getWeather(){
-        return new ResponseEntity<>(this.weatherService.getWeather(), HttpStatus.OK) ;
     }
 
     @GetMapping("/")

@@ -15,13 +15,13 @@ public class WeatherService {
         this.restTemplate = restTemplateBuilder.build();
     }
 
-    private static final String url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=17170cb6b4206b450874a2daa581ff83";
-    private static String lang = "en";
-    private static String unit = "metric";
-
+    private static final String url = "https://api.openweathermap.org/data/2.5/weather?q=";
+    private static final String appid = "17170cb6b4206b450874a2daa581ff83";
+    private static final String city = "Ankara";
+    private static final String language = "en";
     public CurrentWeather getWeather(){
         CurrentWeather data = null;
-        data = restTemplate.getForObject(url, CurrentWeather.class);
+        data = restTemplate.getForObject(url + city + "&lang=" + language + "&appid=" + appid, CurrentWeather.class);
         return data;
     }
 }

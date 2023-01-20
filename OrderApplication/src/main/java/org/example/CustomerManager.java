@@ -5,20 +5,23 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class CustomerManager {
+    //List for individual customers
     List<IndividualCustomer> individualCustomers;
+    //List for corporate customers
     List<CorporateCustomer> corporateCustomers;
     public CustomerManager() {
         this.individualCustomers = new ArrayList<>();
         this.corporateCustomers = new ArrayList<>();
     }
-
+    //Add for individual customers
     public void addIndividualCustomer(IndividualCustomer customer){
         individualCustomers.add(customer);
     }
+    //Add for corporate customers
     public void addCorporateCustomer(CorporateCustomer customer){
         corporateCustomers.add(customer);
     }
-
+    //List all customers
     public void getAllCustomers(){
         System.out.println("Individual Customers");
         for (IndividualCustomer customer: individualCustomers) {
@@ -39,7 +42,7 @@ public class CustomerManager {
                             " Bills: " + customer._bills.stream().map(b-> "Id: " + b.id + " Price: " + b.price + " Month: " + b.billMonth).collect(Collectors.toList()));
         }
     }
-
+    //List customers contains 'C'
     public void getCustomersContainsC(){
         for (IndividualCustomer customer:individualCustomers) {
             if(customer.firstName.toUpperCase().contains("C")){
@@ -52,7 +55,7 @@ public class CustomerManager {
             }
         }
     }
-
+    //Total Price Of Bills Of Customers Created In June
     public void getCustomersWithCreatedMonthJune(){
         int totalPrice = 0;
         for (IndividualCustomer customer:individualCustomers) {
@@ -75,7 +78,7 @@ public class CustomerManager {
         }
         System.out.println("Total price: " + totalPrice);
     }
-
+    //List all bills
     public void getAllBills(){
         for (Customer customer: individualCustomers
              ) {
@@ -86,7 +89,7 @@ public class CustomerManager {
             System.out.println(customer._bills.stream().map(b-> "Id: " + b.id + " Price: " + b.price + " Month: " + b.billMonth).collect(Collectors.toList()));
         }
     }
-
+    //List all bills greater than 1500
     public void getAllBillsGreaterThan1500(){
         for (Customer customer: individualCustomers
         ) {
@@ -103,7 +106,7 @@ public class CustomerManager {
             }
         }
     }
-
+    //Calculate average of bills greater than 1500
     public void calculateAverageBillsGreaterThan1500(){
         List<Integer> avgResult = new ArrayList<>();
         int sum = 0;
@@ -129,7 +132,7 @@ public class CustomerManager {
         }
         System.out.println(sum/avgResult.size());
     }
-
+    //List names of customers with bills under 500TL in the system
     public void getAllCustomersLessThan500(){
         for (IndividualCustomer customer: individualCustomers
         ) {
@@ -139,7 +142,7 @@ public class CustomerManager {
             }
         }
     }
-
+    //List in which sector the companies with bill of less than 750 in June are
     public void getCorporateCustomersFiltered(){
         for (CorporateCustomer customer: corporateCustomers
         ) {

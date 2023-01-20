@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="card">
-    <h1>Weather API</h1>
+    <h1>Ankara</h1>
     <div th:each="weather: ${data.getWeather()}">
         <div th:text="'Main: ' + ${weather.getMain()}">Main</div>
         <div th:text="'Description: ' + ${weather.getDescription()}">Description</div>

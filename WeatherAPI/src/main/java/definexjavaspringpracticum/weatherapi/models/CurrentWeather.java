@@ -10,14 +10,8 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CurrentWeather {
     private List<Weather> weather;
-    private String base;
     private Main main;
-    private int dt;
     private Sys sys;
-    private int timezone;
-    private int id;
-    private String name;
-    private int cod;
 
     private static class Main {
         private float temp;

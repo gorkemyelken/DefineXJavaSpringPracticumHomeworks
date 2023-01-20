@@ -21,7 +21,11 @@ public class WeatherService {
     private static final String language = "en";
     public CurrentWeather getWeather(){
         CurrentWeather data = null;
-        data = restTemplate.getForObject(url + city + "&lang=" + language + "&appid=" + appid, CurrentWeather.class);
+        try{
+            data = restTemplate.getForObject(url + city + "&lang=" + language + "&appid=" + appid, CurrentWeather.class);
+        }catch (Exception e){
+            System.out.println(e);
+        }
         return data;
     }
 }

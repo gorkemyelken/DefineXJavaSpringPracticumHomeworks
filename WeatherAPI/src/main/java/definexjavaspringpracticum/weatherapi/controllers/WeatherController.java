@@ -26,9 +26,10 @@ public class WeatherController {
         return new ResponseEntity<>(this.weatherService.getWeather(), HttpStatus.OK) ;
     }
 
-    @GetMapping("/get")
+    @GetMapping("/")
     public String get(Model model){
-        model.addAttribute("name",this.weatherService.getWeather().getName());
-        return "get";
+        CurrentWeather data = weatherService.getWeather();
+        model.addAttribute("data",data);
+        return "index";
     }
 }

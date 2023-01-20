@@ -1,0 +1,22 @@
+* {
+    Box-Sizing: Border-Box;
+}
+Body {
+    Margin: 0;
+    Font-Family: "Poppins", Sans-Serif;
+    Background-Color: Linear-Gradiet(300deg, #757b87, #909d9d);
+    Display: Flex;
+    Justify-Content: Center;
+    Align-Items: Center;
+    Min-Height: 100vh;
+    Flex-Direction: Column;
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border: solid 5px;
+  border-radius: 30px;
+  text-align: center;
+}

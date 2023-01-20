@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <Link Rel="Stylesheet" Href="/style.css">
+</head>
+<body>
+<div class="card">
+    <h1>Weather</h1>
+    <div th:each="weather: ${data.getWeather()}">
+        <div th:text="'Main: ' + ${weather.getMain()}">Main</div>
+        <div th:text="'Description: ' + ${weather.getDescription()}">Description</div>
+    </div>
+
+    <div th:text="'Temperature: ' + ${data.getMain().getTemp()} + '  &deg;C'">Temperature</div>
+    <div th:text="'Feels Like: ' + ${data.getMain().getFeels_like()} + '  &deg;C'">Feels Like</div>
+    <div th:text="'Minimum: ' + ${data.getMain().getTemp_min()} + '  &deg;C'">Minimum Temperature</div>
+    <div th:text="'Maximum: ' + ${data.getMain().getTemp_max()} + '  &deg;C'">Maximum Temperature</div>
+    <div th:text="'Pressure: ' + ${data.getMain().getPressure()}">Pressure</div>
+
+    <div th:text="'Country: ' + ${data.getSys().getCountry()}">Country</div>
+</div>
+
+
+</body>
+</html>

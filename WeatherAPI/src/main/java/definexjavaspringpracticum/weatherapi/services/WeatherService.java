@@ -20,7 +20,7 @@ public class WeatherService {
     private static String unit = "metric";
 
     public CurrentWeather getWeather(){
-        CurrentWeather data = new CurrentWeather();
+        CurrentWeather data = null;
         data = restTemplate.getForObject(url, CurrentWeather.class);
         return data;
     }

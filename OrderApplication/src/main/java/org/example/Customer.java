@@ -1,19 +1,17 @@
 package org.example;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
-
     int id;
-    String firstName;
-    String lastName;
+    LocalDate createdDate;
+    List<Bill> _bills;
 
-    List<Bill> bills;
-
-    public Customer(int id, String firstName, String lastName) {
+    public Customer(int id, LocalDate createdDate, Bill... bills) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.createdDate = createdDate;
+        this._bills = new ArrayList<>(List.of(bills));
     }
 }

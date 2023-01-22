@@ -16,7 +16,7 @@ public class WeatherService {
     }
 
     private static final String url = "https://api.openweathermap.org/data/2.5/weather?q=";
-    private static final String appid = "17170cb6b4206b450874a2daa581ff83";
+    private static final String appid = "Type your api key here.";
     private static final String city = "Ankara";
     private static final String language = "en";
     public CurrentWeather getWeather(){
